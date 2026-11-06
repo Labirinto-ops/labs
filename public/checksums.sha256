@@ -1,0 +1,6 @@
+# Add SHA-256 entries for the ZIP files you publish in this directory.
+# Generate/update this file from the repository root with:
+#   find public -maxdepth 1 -type f -name '*.zip' -print0 | sort -z | xargs -0 -r sha256sum > public/checksums.sha256
+#
+# Verify a downloaded file with:
+#   sha256sum -c checksums.sha256

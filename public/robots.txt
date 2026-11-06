@@ -1,0 +1,4 @@
+# This site is intentionally public but should not appear in search results.
+# Crawlers are allowed to fetch responses so they can see the noindex directives.
+User-agent: *
+Allow: /

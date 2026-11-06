@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#05080d">
+  <title>Hello World, there's nothing here!</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05080d;
+      --panel: rgba(8, 18, 25, .82);
+      --green: #65ffb5;
+      --cyan: #50dfff;
+      --muted: #6e8a91;
+      --line: rgba(101, 255, 181, .20);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--bg); }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 24px;
+      color: #e6fff5;
+      background:
+        radial-gradient(ellipse at 50% 48%, rgba(0, 107, 91, .17), transparent 52%),
+        linear-gradient(rgba(5, 8, 13, .91), rgba(5, 8, 13, .97)),
+        repeating-linear-gradient(0deg, transparent 0 3px, rgba(80, 223, 255, .035) 4px);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+    body::before {
+      opacity: .20;
+      background-image:
+        linear-gradient(rgba(80,223,255,.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,223,255,.09) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at center, black, transparent 78%);
+    }
+    body::after {
+      background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0,0,0,.16) 4px);
+      opacity: .35;
+    }
+    .ambient {
+      position: fixed;
+      inset: -20%;
+      overflow: hidden;
+      pointer-events: none;
+      color: rgba(101,255,181,.12);
+      font-size: clamp(10px, 1.3vw, 16px);
+      line-height: 2.2;
+      letter-spacing: .35em;
+      word-break: break-all;
+      transform: rotate(-9deg);
+      user-select: none;
+      animation: drift 38s linear infinite;
+    }
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(760px, 100%);
+      padding: clamp(24px, 5vw, 54px);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 0 60px rgba(0, 255, 170, .07), inset 0 0 34px rgba(0, 255, 170, .025);
+      backdrop-filter: blur(8px);
+    }
+    .topline, .bottomline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .status { color: var(--green); }
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 9px 1px 0;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    .rule { height: 1px; margin: 24px 0; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    main { text-align: center; padding: clamp(24px, 5vw, 48px) 0; }
+    .binary {
+      color: var(--cyan);
+      font-size: clamp(10px, 1.6vw, 13px);
+      letter-spacing: .2em;
+      line-height: 2;
+      overflow-wrap: anywhere;
+      opacity: .78;
+    }
+    h1 {
+      margin: 28px 0 16px;
+      font-size: clamp(30px, 6vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -.065em;
+      font-weight: 700;
+      text-shadow: 0 0 24px rgba(101,255,181,.19);
+    }
+    h1 span { color: var(--green); }
+    .hex {
+      color: #7da6a7;
+      font-size: clamp(10px, 1.5vw, 12px);
+      letter-spacing: .23em;
+    }
+    .cursor {
+      display: inline-block;
+      width: .58em;
+      height: 1em;
+      margin-left: .12em;
+      vertical-align: -.12em;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+      animation: blink 1s steps(2, start) infinite;
+    }
+    .bottomline { font-size: 10px; }
+    @keyframes blink { to { visibility: hidden; } }
+    @keyframes pulse { 50% { opacity: .35; } }
+    @keyframes drift { from { transform: translateY(-3%) rotate(-9deg); } to { transform: translateY(3%) rotate(-9deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
+    }
+    @media (max-width: 480px) {
+      .topline, .bottomline { font-size: 9px; letter-spacing: .08em; }
+      .shell { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    01001000 01000101 01001100 01001100 01001111 0x4E 0x4F 0x54 0x48 0x49 0x4E 0x47
+    01010110 01001111 01001001 01000100 0x00 0xFF 0x7A 0xC3 01000001 01001100 01001001 01010110 01000101
+  </div>
+  <section class="shell" aria-label="Empty landing page">
+    <div class="topline">
+      <span class="status">System online</span>
+      <span>Node // 0x00</span>
+    </div>
+    <div class="rule"></div>
+    <main>
+      <div class="binary">01001000 01000101 01001100 01001100 01001111</div>
+      <h1>Hello World,<br><span>there's nothing here!</span><i class="cursor" aria-hidden="true"></i></h1>
+      <div class="hex">0x4E 0x4F 0x54 0x48 0x49 0x4E 0x47</div>
+    </main>
+    <div class="rule"></div>
+    <div class="bottomline">
+      <span>ROOT@VOID:~$ exit</span>
+      <span>End of transmission</span>
+    </div>
+  </section>
+</body>
+</html>
